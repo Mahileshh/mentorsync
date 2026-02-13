@@ -12,20 +12,19 @@ function Sidebar() {
      }`;
 
   return (
- <div className="w-64 min-h-screen bg-gray-900 px-6 py-8">
-
-      
-      
+    <div className="w-64 min-h-screen bg-gray-900 px-6 py-8 flex flex-col">
+      {/* Logo & Mentor Info - Make this dynamic with props or context */}
       <div className="mb-10">
         <h2 className="text-xl font-semibold text-white tracking-wide">
           MentorFlow
         </h2>
         <p className="text-xs text-white/70 mt-1">
-          Mentor · Dr. John
+          Mentor · Dr. John {/* You can make this dynamic later */}
         </p>
       </div>
 
-      <nav className="space-y-1">
+      {/* Navigation Links */}
+      <nav className="space-y-1 flex-1">
         <Link to="/" className={linkStyle("/")}>
           Dashboard
         </Link>
@@ -41,18 +40,17 @@ function Sidebar() {
         <Link to="/feedback" className={linkStyle("/feedback")}>
           Feedback
         </Link>
-
       </nav>
 
-  
+      {/* Divider */}
       <div className="my-8 border-t border-white/10" />
 
-  
+      {/* Logout Button */}
       <Link
         to="/signin"
-        className="text-sm text-red-700 hover:text-red-300 transition"
+        className="text-sm text-red-400 hover:text-red-300 transition flex items-center gap-2"
       >
-        Logout
+        <span>←</span> Logout
       </Link>
     </div>
   );

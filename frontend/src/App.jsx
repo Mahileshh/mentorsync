@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
 import Sidebar from "./pages/Sidebar";
-import Navbar from "./pages/NavBar";
 import MentorHome from "./pages/MentorHome";
 import MenteesList from "./pages/MenteesList";
 import ProgressGraph from "./pages/ProgressGraph";
@@ -8,6 +7,7 @@ import ScheduleMeeting from "./pages/ScheduleMeeting";
 import StudentFeedback from "./pages/StudentFeedback";
 import LoginPage from "./pages/LoginPage";
 import SignUpPage from "./pages/SignUpPage";
+import MenteeHome from "./pages/Mentee/MenteeHome"
 
 // Layout with Sidebar and Navbar
 function AuthenticatedLayout() {
@@ -15,7 +15,7 @@ function AuthenticatedLayout() {
     <div className="flex bg-gray-50 min-h-screen">
       <Sidebar />
       <div className="flex-1 flex flex-col">
-        <Navbar />
+        
         <main className="flex-1 p-6">
           <Outlet />
         </main>
@@ -41,6 +41,7 @@ function App() {
         <Route element={<GuestLayout />}>
           <Route path="/signin" element={<LoginPage />} />
           <Route path="/signup" element={<SignUpPage />} />
+          <Route path="/menteehome" element={<MenteeHome/>}/>
         </Route>
 
         {/* Authenticated Routes (with sidebar and navbar) */}
@@ -57,6 +58,7 @@ function App() {
           <Route path="/mentor/feedback" element={<StudentFeedback />} />
           <Route path="/mentor/*" element={<Navigate to="/" replace />} />
         </Route>
+
       </Routes>
     </BrowserRouter>
   );

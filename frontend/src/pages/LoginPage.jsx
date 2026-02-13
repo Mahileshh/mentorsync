@@ -19,9 +19,6 @@
     navigate("/")
       // Add your authentication logic here
       console.log('Login attempt:', { username, password });
-      
-      // Example: redirect on successful login
-      // navigate('/dashboard');
     };
 
     return (
